@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+         
+        #reset:hover {
+            background-color: rgb(145, 88, 110);
+            color: burlywood;
+        }
+
+        #reset {
+            text-align: center;
+            height: 50px;
+            width: 120px;
+            margin: 2% 45%;
+            color: rgb(0, 0, 0);
+            background-color: rgb(184, 163, 204);
+        }
+
+        #heading {
+            text-align: center;
+            color: rgb(15, 53, 109);
+        }
+
+        #heading:hover {
+            color: darkcyan;
+        }
+
+        .para {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            margin: 2% 35%;
+            background-color: rgb(184, 163, 204);
+            border: 3px solid rgb(0, 0, 0);
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px solid rgb(9, 1, 15);
+            border-radius: 3px;
+            width: 120px;
+            height: 100px;
+        }
+        td:hover{
+            background-color: rgb(214, 174, 174);
+        }
+    </style>
+</head>
+<body>
+    <h2 id="heading" class="heading">Welcome to tic tac toe</h2>
+    <p class="para">Player x - single click </p>
+    <p class="para">Player 0 - double click </p>
+    <table id="main" class="main">
+
+        <tr>
+            <td class="row" id="1x1" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="1x2" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="1x3" onclick="cross(this)" ondblclick="circle(this)"></td>
+        </tr>
+        <tr>
+            <td class="row" id="2x1" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="2x2" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="2x3" onclick="cross(this)" ondblclick="circle(this)"></td>
+        </tr>
+        <tr>
+            <td class="row" id="3x1" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="3x2" onclick="cross(this)" ondblclick="circle(this)"></td>
+            <td class="row" id="3x3" onclick="cross(this)" ondblclick="circle(this)"></td>
+        </tr>
+    </table>
+    <input type="button" id="reset" value="RESET" onclick="reset()">
+    <script>
+        ektacounter = 0;
+        ektacntx = 0;
+        ektacnto = 0;
+
+        ektaflag = 0;
+        function cross(ektacross) {
+            if (ektaflag == 0 && ektacross.innerHTML == "") {
+                ektacross.innerHTML = "x";
+                ektaflag = 1;
+                ekta();
+            }
+        }
+        function circle(ektacircle) {
+            if (ektacircle.innerHTML == "") {
+                ektacircle.innerHTML = "0";
+                ektaflag = 0;
+                ekta();
+            }
+        }
+        function ekta() {
+            var ekta1 = document.getElementById("1x1").innerHTML;
+            var ekta2 = document.getElementById("1x2").innerHTML;
+            var ekta3 = document.getElementById("1x3").innerHTML;
+            var ekta4 = document.getElementById("2x1").innerHTML;
+            var ekta5 = document.getElementById("2x2").innerHTML;
+            var ekta6 = document.getElementById("2x3").innerHTML;
+            var ekta7 = document.getElementById("3x1").innerHTML;
+            var ekta8 = document.getElementById("3x2").innerHTML;
+            var ekta9 = document.getElementById("3x3").innerHTML;
+
+            if (ekta1 == 'x' && ekta2 == 'x' && ekta3 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta4 == 'x' && ekta5 == 'x' && ekta6 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta7 == 'x' && ekta8 == 'x' && ekta9 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+            }
+            else if (ekta1 == 'x' && ekta4 == 'x' && ekta7 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta2 == 'x' && ekta5 == 'x' && ekta8 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta3 == 'x' && ekta6 == 'x' && ekta9 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta1 == 'x' && ekta5 == 'x' && ekta9 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta3 == 'x' && ekta5 == 'x' && ekta7 == 'x') {
+                ektacounter++;
+                ektacntx++;
+                alert('Player x won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta1 == '0' && ekta2 == '0' && ekta3 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta4 == '0' && ekta5 == '0' && ekta6 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta7 == '0' && ekta8 == '0' && ekta9 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta1 == '0' && ekta4 == '0' && ekta7 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta2 == '0' && ekta5 == '0' && ekta8 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta3 == '0' && ekta6 == '0' && ekta9 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta1 == '0' && ekta5 == '0' && ekta9 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta3 == '0' && ekta5 == '0' && ekta7 == '0') {
+                ektacounter++;
+                ektacnto++;
+                alert('Player 0 won\n' + 'Number of time x win:' + ektacntx + "\n Number of time 0 win:" + ektacnto + "\nNumber of games played:" + ektacounter);
+
+            }
+            else if (ekta1.length != 0 && ekta2.length!= 0 && ekta3.length!= 0 && ekta4.length!= 0 && ekta5.length!= 0 && ekta6.length!= 0 && ekta7.length!= 0 && ekta8.length!= 0 && ekta9.length!= 0) {
+                ektacounter++;
+                alert("Match is drawn\n"+ 'Number of time x win:'+ektacntx+"\n Number of time 0 win:"+ektacnto+ "\nNumber of games played:"+ ektacounter);
+            }
+        }
+        function reset() {
+            var ekta1 = document.getElementById("1x1").innerHTML = "";
+            var ekta2 = document.getElementById("1x2").innerHTML = "";
+            var ekta3 = document.getElementById("1x3").innerHTML = "";
+            var ekta4 = document.getElementById("2x1").innerHTML = "";
+            var ekta5 = document.getElementById("2x2").innerHTML = "";
+            var ekta6 = document.getElementById("2x3").innerHTML = "";
+            var ekta7 = document.getElementById("3x1").innerHTML = "";
+            var ekta8 = document.getElementById("3x2").innerHTML = "";
+            var ekta9 = document.getElementById("3x3").innerHTML = "";
+        }
+    </script>
+</body>
+</html>
